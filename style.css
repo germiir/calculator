@@ -1,0 +1,29 @@
+html,
+body {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  font-family: monospace;
+  font-size: 20px;
+  background-color: darkgreen;
+}
+
+.window {
+  background-color: #23272a;
+  height: 28rem;
+  width: 20rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonsAndWindow {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
