@@ -3,14 +3,6 @@ let currentActiveFunction = " ";
 let firstNumber = "";
 
 function buttonPress(x) {
-  /*
-  const plus = document.getElementById("plus");
-  const output = document.getElementById("output");
-  const minus = document.getElementById("minus");
-  const divide = document.getElementById("divide");
-  const multiply = document.getElementById("multiply");
-  const deleteButton = document.getElementById("deleteButton");
-  */
   switch(x) {
     case 1:
     case 2:
@@ -37,7 +29,6 @@ function buttonPress(x) {
       firstNumber = parseInt(numberArray.join(""));
       clearOutput();
       currentActiveFunction = "plus";
-      console.log(currentActiveFunction);
       plus.style.backgroundColor = "yellow";
       break;
     
@@ -45,7 +36,6 @@ function buttonPress(x) {
       firstNumber = parseInt(numberArray.join(""));
       clearOutput();
       currentActiveFunction = "minus";
-      console.log(currentActiveFunction);
       minus.style.backgroundColor = "yellow";
       break;
 
@@ -53,7 +43,6 @@ function buttonPress(x) {
       firstNumber = parseInt(numberArray.join(""));
       clearOutput();
       currentActiveFunction = "divide";
-      console.log(currentActiveFunction);
       divide.style.backgroundColor = "yellow";
       break;
 
@@ -61,7 +50,6 @@ function buttonPress(x) {
       firstNumber = parseInt(numberArray.join(""));
       clearOutput();
       currentActiveFunction = "multiply";
-      console.log(currentActiveFunction);
       multiply.style.backgroundColor = "yellow";
       break;
     
@@ -73,7 +61,6 @@ function buttonPress(x) {
         output.innerHTML = "0";
       }
       break;
-
   }
 }
 
@@ -110,9 +97,10 @@ function calculate(x, y) {
     
     default:
       console.log("error");
+      break;
   }
+
   numberTooLong(result);
-  /*output.innerHTML = x + y;*/
   numberArray = [];
   firstNumber = "";
   currentActiveFunction = " ";
@@ -129,6 +117,3 @@ function numberTooLong(result) {
     output.innerHTML = result;
   }
 }
-
-
-
