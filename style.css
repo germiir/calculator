@@ -1,16 +1,18 @@
 html,
 body {
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
   font-family: monospace;
   font-size: 20px;
-  background-color: darkgreen;
+  background-color: #202225;
 }
 
 .window {
-  background-color: #23272a;
-  height: 28rem;
+  border-radius: 0.5rem;
+  background-color: #2f3136;
+  height: 32rem;
   width: 20rem;
   position: absolute;
   left: 50%;
@@ -23,7 +25,53 @@ body {
 }
 
 .buttonsAndWindow {
+  width: 90%;
+  height: 90%;
+  /*background-color: red;*/
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+}
+
+.outputWindow {
+  background-color: white;
+  text-align: right;
+  font-size: 2.5rem;
   width: 100%;
   height: 100%;
-  background-color: red;
+}
+
+#output {
+  margin-right: 1rem;
+}
+
+.buttonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 0.7fr;
+  grid-template-rows: auto auto auto auto;
+  padding-top: 1rem;
+  user-select: none;
+}
+
+.keys {
+  background-color: #677bc4;
+  /*border: 1px solid black;*/
+  margin: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  border-radius: 0.5rem;
+}
+
+.keys:active,
+#equals:active {
+  background-color: #99aab5;
+}
+
+.functionButtons {
+  background-color: #97abf1;
+}
+
+#equals {
+  background-color: #215fbb;
 }
