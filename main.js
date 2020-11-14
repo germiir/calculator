@@ -16,7 +16,25 @@ const multiply = document.getElementById("multiply");
 const point = document.getElementById("point");
 const equals = document.getElementById("equals");
 
+let numberArray = [];
+let currentActiveFunction = " ";
+
+function clearOutput() {
+  const functionKeys = document.getElementsByClassName("functionButtons");
+  document.getElementById("output").innerHTML = "0";
+  currentActiveFunction = " ";
+  numberArray = [];
+  for(let i = 0; i < 5; i++) {
+    functionKeys[i].style.backgroundColor = "#97abf1";
+  }
+} 
+
+function calculate(x, y) {}
+
 function buttonPress(x) {
+  const plus = document.getElementById("plus");
+  const output = document.getElementById("output");
+  const functionKeys = document.getElementsByClassName("functionButtons");
   switch(x) {
     case 1:
     case 2:
@@ -28,7 +46,16 @@ function buttonPress(x) {
     case 8:
     case 9:
     case 0:
-      console.log(x);
+      if(numberArray.length < 10) {
+        numberArray.push(x);
+        output.innerHTML = numberArray.join("");
+      }
       break;
+    
+    case 'plus':
+      currentActiveFunction = "plus";
+      console.log(currentActiveFunction);
+      clearOutput();
+      plus.style.backgroundColor = "yellow";
   }
 }
