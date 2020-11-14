@@ -18,6 +18,7 @@ const equals = document.getElementById("equals");
 
 let numberArray = [];
 let currentActiveFunction = " ";
+let firstNumber = "";
 
 function clearOutput() {
   const functionKeys = document.getElementsByClassName("functionButtons");
@@ -29,10 +30,21 @@ function clearOutput() {
   }
 } 
 
-function calculate(x, y) {}
+function calculate(x, y) {
+  const output = document.getElementById("output");
+  const functionKeys = document.getElementsByClassName("functionButtons");
+  output.innerHTML = x + y;
+  numberArray = [];
+  firstNumber = "";
+  currentActiveFunction = " ";
+  for(let i = 0; i < 5; i++) {
+    functionKeys[i].style.backgroundColor = "#97abf1";
+  }
+}
 
 function buttonPress(x) {
   const plus = document.getElementById("plus");
+  const equals = document.getElementById("equals");
   const output = document.getElementById("output");
   const functionKeys = document.getElementsByClassName("functionButtons");
   switch(x) {
@@ -52,10 +64,17 @@ function buttonPress(x) {
       }
       break;
     
+    case 'equals':
+      let secondNumber = parseInt(numberArray.join(""));
+      calculate(firstNumber, secondNumber);
+      break;
+
     case 'plus':
+      firstNumber = parseInt(numberArray.join(""));
       currentActiveFunction = "plus";
       console.log(currentActiveFunction);
       clearOutput();
       plus.style.backgroundColor = "yellow";
+      break;
   }
 }
