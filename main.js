@@ -9,7 +9,6 @@ const key6 = document.getElementById("key6");
 const key7 = document.getElementById("key7");
 const key8 = document.getElementById("key8");
 const key9 = document.getElementById("key9");
-const plus = document.getElementById("plu
 const plus = document.getElementById("plus");
 const minus = document.getElementById("minus");
 const divide = document.getElementById("divide");
