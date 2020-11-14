@@ -30,10 +30,37 @@ function clearOutput() {
   }
 } 
 
+function numberTooLong(result) {
+  const output = document.getElementById("output");
+  if(result.toString().length > 9) {
+    output.innerHTML = "Too long";
+  } else {
+    output.innerHTML = result;
+  }
+}
+
 function calculate(x, y) {
+  let result = 0;
   const output = document.getElementById("output");
   const functionKeys = document.getElementsByClassName("functionButtons");
-  output.innerHTML = x + y;
+  switch(currentActiveFunction) {
+    case 'plus':
+      result = x + y;
+      break;
+
+    case 'minus':
+      result = x - y;
+      break;
+    
+    case 'divide':
+      result = x / y;
+      break;
+    
+    default:
+      console.log("error");
+  }
+  numberTooLong(result);
+  /*output.innerHTML = x + y;*/
   numberArray = [];
   firstNumber = "";
   currentActiveFunction = " ";
@@ -47,6 +74,9 @@ function buttonPress(x) {
   const equals = document.getElementById("equals");
   const output = document.getElementById("output");
   const functionKeys = document.getElementsByClassName("functionButtons");
+  const minus = document.getElementById("minus");
+  const divide = document.getElementById("divide");
+
   switch(x) {
     case 1:
     case 2:
@@ -71,10 +101,26 @@ function buttonPress(x) {
 
     case 'plus':
       firstNumber = parseInt(numberArray.join(""));
+      clearOutput();
       currentActiveFunction = "plus";
       console.log(currentActiveFunction);
-      clearOutput();
       plus.style.backgroundColor = "yellow";
+      break;
+    
+    case 'minus':
+      firstNumber = parseInt(numberArray.join(""));
+      clearOutput();
+      currentActiveFunction = "minus";
+      console.log(currentActiveFunction);
+      minus.style.backgroundColor = "yellow";
+      break;
+
+    case 'divide':
+      firstNumber = parseInt(numberArray.join(""));
+      clearOutput();
+      currentActiveFunction = "divide";
+      console.log(currentActiveFunction);
+      divide.style.backgroundColor = "yellow";
       break;
   }
 }
